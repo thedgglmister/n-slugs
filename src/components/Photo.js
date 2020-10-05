@@ -66,9 +66,7 @@ class Photo extends React.Component {
 
 
      return (
-       <noscript class="loading-lazy">
           <img src={url} style={imgStyle} className="photo" loading="lazy"/>
-       </noscript>
      );
 
 
