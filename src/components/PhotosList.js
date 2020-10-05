@@ -1,6 +1,9 @@
 import React from 'react';
 
+import Div100vh from 'react-div-100vh';
+
 import Photo from './Photo';
+
 
 
 
@@ -70,6 +73,8 @@ class PhotosList extends React.Component {
       position: 'fixed',
       zIndex: '-5',
       opacity: '0.6',
+      minHeight: '100vh',
+      minHeight: '-webkit-fill-available',
     };
 
 
@@ -77,16 +82,18 @@ class PhotosList extends React.Component {
 
     return (
         <div>
-          <img src={backgroundUrl} style={test} />
-          <div style={photosContainerStyle}>
-            {urls.map((url, i) => (
-              <Photo
-                key={i}
-                index={i}
-                url={url}
-                handleLoad={this.handleLoad}/>
-            ))}
-          </div>
+          <Div100vh>
+            <img src={backgroundUrl} style={test} />
+            <div style={photosContainerStyle}>
+              {urls.map((url, i) => (
+                <Photo
+                  key={i}
+                  index={i}
+                  url={url}
+                  handleLoad={this.handleLoad}/>
+              ))}
+            </div>
+          </Div100vh>
         </div>
 
     );
