@@ -65,6 +65,10 @@ class Photo extends React.Component {
       backgroundColor: '#ddd',
       borderRadius: '5px',
       cursor: 'pointer',
+      color: '#bbb',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
     };
 
 
@@ -77,7 +81,9 @@ class Photo extends React.Component {
           <div>
           {
             url == '#' ?
-            <div style={divStyle} className="photo"></div> :
+            <div style={divStyle} className="photo">
+              Loading Slug...
+            </div> :
             <img src={url} style={imgStyle} className="photo" loading="lazy" onLoad={() => handleLoad(index)} onError={() => handleLoad(index)}/>
           }
           </div>
