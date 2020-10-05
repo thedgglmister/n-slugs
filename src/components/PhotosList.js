@@ -9,21 +9,21 @@ import Photo from './Photo';
 
 class PhotosList extends React.Component {
 
-  // constructor(props) {
-  //   super(props);
-  //
-  //   const urls = [];
-  //   for (let i = 1; i < 306; i++) {
-  //     urls.push(`#`);
-  //   }
-  //   urls[0] = 'img/1.jpeg';
-  //
-  //   this.state = {
-  //     urls
-  //   };
-  //
-  //   this.handleLoad = this.handleLoad.bind(this);
-  // }
+  constructor(props) {
+    super(props);
+
+    // const urls = [];
+    // for (let i = 1; i < 306; i++) {
+    //   urls.push(`#`);
+    // }
+    // urls[0] = 'img/1.jpeg';
+
+    this.state = {
+      backgroundLoading: true,
+    };
+
+    this.handleLoad = this.handleLoad.bind(this);
+  }
   //
   // handleLoad(i) {
   //   console.log(i);
@@ -36,9 +36,15 @@ class PhotosList extends React.Component {
   //   });
   // }
 
+  handleLoad() {
+    this.setState({
+      backgroundLoading: false,
+    });
+  }
+
   render() {
 
-    // const { urls } = this.state;
+    const { backgroundLoading } = this.state;
 
     const backgroundUrl = 'img/a.jpg';
 
@@ -83,16 +89,18 @@ class PhotosList extends React.Component {
     return (
         <div>
           <Div100vh>
-            <img src={backgroundUrl} style={test} />
-            <div style={photosContainerStyle}>
-              {urls.map((url, i) => (
-                <Photo
-                  key={i}
-                  index={i}
-                  url={url}
-                  handleLoad={this.handleLoad}/>
-              ))}
-            </div>
+            <img src={backgroundUrl} style={test} onLoad={this.handleLoad}/>
+            {!backgroundLoading &&
+              <div style={photosContainerStyle}>
+                {urls.map((url, i) => (
+                  <Photo
+                    key={i}
+                    index={i}
+                    url={url}
+                    handleLoad={this.handleLoad}/>
+                ))}
+              </div>
+            }
           </Div100vh>
         </div>
 
