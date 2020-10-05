@@ -63,7 +63,7 @@ class PhotosList extends React.Component {
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
-      backgroundAttachment: 'fixed',
+      backgroundAttachment: 'scroll',
       height: '100vh',
       width: '100vw',
       position: 'fixed',
