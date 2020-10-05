@@ -69,7 +69,7 @@ class Photo extends React.Component {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      fontSize: '24px',
+      fontSize: '20px',
     };
 
 
@@ -78,16 +78,20 @@ class Photo extends React.Component {
 
 
 
+     // return (
+     //      <div>
+     //      {
+     //        url == '#' ?
+     //        <div style={divStyle} className="photo">
+     //          Loading Slug...
+     //        </div> :
+     //        <img src={url} style={imgStyle} className="photo" loading="lazy" onLoad={() => handleLoad(index)} onError={() => handleLoad(index)}/>
+     //      }
+     //      </div>
+     // );
+
      return (
-          <div>
-          {
-            url == '#' ?
-            <div style={divStyle} className="photo">
-              Loading Slug...
-            </div> :
-            <img src={url} style={imgStyle} className="photo" loading="lazy" onLoad={() => handleLoad(index)} onError={() => handleLoad(index)}/>
-          }
-          </div>
+       <img src={url} style={imgStyle} className="photo" />  
      );
 
 
