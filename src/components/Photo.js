@@ -49,7 +49,7 @@ class Photo extends React.Component {
   }
 
   render() {
-    const { url } = this.props;
+    const { url, index, handleLoad } = this.props;
     const { modalOpen, hovered } = this.state;
 
 
@@ -61,12 +61,26 @@ class Photo extends React.Component {
       cursor: 'pointer',
     };
 
+    const divStyle = {
+      backgroundColor: '#ddd',
+      borderRadius: '5px',
+      cursor: 'pointer',
+    };
+
+
+
 
 
 
 
      return (
-          <img src={url} style={imgStyle} className="photo" loading="lazy"/>
+          <div>
+          {
+            url == '#' ?
+            <div style={divStyle} className="photo"></div> :
+            <img src={url} style={imgStyle} className="photo" loading="lazy" onLoad={() => handleLoad(index)} onError={() => handleLoad(index)}/>
+          }
+          </div>
      );
 
 
