@@ -53,21 +53,7 @@ class Photo extends React.Component {
     const { modalOpen, hovered } = this.state;
 
 
-    const containerStyle = {
-      margin: '20px',
-      minWidth: '25%',
-      flexGrow: '1',
-      // backgroundImage: `url(${url})`,
-      // backgroundSize: 'cover',
-      // backgroundPosition: 'center',
-      cursor: 'pointer',
-      position: 'relative',
-    }
-    const paddingStyle = {
-      paddingTop: '100%',
-      backgroundColor: '#000',
-      opacity: (hovered ? '0.2' : '0'),
-    };
+
 
     const imgStyle = {
       objectFit: 'cover',
@@ -80,8 +66,9 @@ class Photo extends React.Component {
 
 
      return (
+       <noscript class="loading-lazy">
           <img src={url} style={imgStyle} className="photo" loading="lazy"/>
-
+       </noscript>
      );
 
 
