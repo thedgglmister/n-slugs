@@ -65,10 +65,11 @@ class Photo extends React.Component {
       backgroundColor: '#ddd',
       borderRadius: '5px',
       cursor: 'pointer',
-      color: '#bbb',
+      color: '#999',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
+      fontSize: '24px',
     };
 
 
