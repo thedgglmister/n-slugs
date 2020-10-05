@@ -59,13 +59,14 @@ class PhotosList extends React.Component {
     };
 
     const test = {
-      backgroundImage: `url(${backgroundUrl})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      backgroundAttachment: 'scroll',
+      // backgroundImage: `url(${backgroundUrl})`,
+      // backgroundSize: 'cover',
+      // backgroundPosition: 'center',
+      // backgroundRepeat: 'no-repeat',
+      // backgroundAttachment: 'scroll',
       height: '100vh',
       width: '100vw',
+      objectFit: 'cover',
       position: 'fixed',
       zIndex: '-5',
       opacity: '0.6',
@@ -76,7 +77,7 @@ class PhotosList extends React.Component {
 
     return (
         <div>
-          <div style={test}></div>
+          <img src={backgroundUrl} style={test} />
           <div style={photosContainerStyle}>
             {urls.map((url, i) => (
               <Photo
